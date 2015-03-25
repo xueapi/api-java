@@ -32,7 +32,7 @@ public class Weather {
 
 		log.info("url = " + url);
 		HttpGetClient client = new HttpGetClient();
-		String content = client.getWeatherInfo(url);
+		String content = client.getInfo(url);
 		
 		return content;
 

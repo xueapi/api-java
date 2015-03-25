@@ -8,10 +8,12 @@ import java.io.InputStreamReader;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpException;
 import org.apache.commons.httpclient.methods.GetMethod;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /*
  * <p>Title: HttpGetClient</p>
- * <p>Description: 中国气象局公共气象服务中心 - 客户端HTTP请求类</p>
+ * <p>Description: 学api网 - 客户端HTTP请求类</p>
  * <p>Copyright: Copyright (c) 2015</p>
  * <p>Company: XUEAPI.COM</p>
  * <p>Create at: 2015-2-25</p>
@@ -20,13 +22,15 @@ import org.apache.commons.httpclient.methods.GetMethod;
  */
 public class HttpGetClient {
 	
+	private static final Log log = LogFactory.getLog(HttpGetClient.class);
+	
 	private static String charset = "utf-8";
 
-	public String getWeatherInfo(String url) {
-		return getWeatherInfo(url, charset);
+	public String getInfo(String url) {
+		return getInfo(url, charset);
 	}
 
-	public String getWeatherInfo(String url, String charset) {
+	public String getInfo(String url, String charset) {
 
 		HttpClient client = new HttpClient();
 		GetMethod httpGet = null;
@@ -57,8 +61,10 @@ public class HttpGetClient {
 			httpGet.releaseConnection();
 		}
 		
+		String content = buffer.toString();
+		log.info("content = " + content);
+		
 		return buffer.toString();
-
 	}
 
 }

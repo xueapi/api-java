@@ -16,6 +16,15 @@ import com.alibaba.fastjson.JSONObject;
 import com.xueapi.life.weather.openweather.IndexInfo;
 import com.xueapi.life.weather.openweather.Weather;
 
+/*
+ * <p>Title: WeatherInfo</p>
+ * <p>Description: 中国气象局公共气象服务中心 - Junit测试类</p>
+ * <p>Copyright: Copyright (c) 2015</p>
+ * <p>Company: XUEAPI.COM</p>
+ * <p>Create at: 2015-2-25</p>
+ * @author: James
+ * @version: 1.0
+ */
 public class IndexTest extends TestCase{
 	
 	private static final Log log = LogFactory.getLog(IndexTest.class);

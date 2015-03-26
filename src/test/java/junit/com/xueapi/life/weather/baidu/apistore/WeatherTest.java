@@ -7,6 +7,15 @@ import org.junit.Test;
 import com.xueapi.life.weather.baidu.apistore.Weather;
 import com.xueapi.life.weather.baidu.apistore.WeatherInfo;
 
+/*
+ * <p>Title: WeatherInfo</p>
+ * <p>Description: 百度API Store天气预报 - Junit测试类</p>
+ * <p>Copyright: Copyright (c) 2015</p>
+ * <p>Company: XUEAPI.COM</p>
+ * <p>Create at: 2015-2-25</p>
+ * @author: James
+ * @version: 1.0
+ */
 public class WeatherTest extends TestCase{
 
 	@Test

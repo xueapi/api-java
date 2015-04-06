@@ -23,7 +23,7 @@ public class Weather {
 	
 	private static String key = "c8a6f4b5a22340f08014e245ac18d611";
 
-	public WeatherInfo getWeatherInfo(String cityName) {
+	private String getClient(String cityName) {
 		try {
 			cityName = URLEncoder.encode(cityName,"utf-8");
 		} catch (UnsupportedEncodingException e1) {
@@ -33,6 +33,12 @@ public class Weather {
 		String url = "http://apis.haoservice.com/weather?cityname=" + cityName + "&key=" + key;
 		HttpGetClient client = new HttpGetClient();
 		String json = client.getInfo(url);
+
+		return json;
+	}
+
+	public WeatherInfo getWeatherInfo(String cityName){
+		String json = this.getClient(cityName);
 
 		Map map = JSONObject.parseObject(json, Map.class);
 		Map result = JSONObject.parseObject(map.get("result").toString(), Map.class);
